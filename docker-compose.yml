@@ -1,0 +1,82 @@
+version: '3.5'
+services:
+  Outside:
+    build: ./Entrance
+    image: nat
+    hostname: NAT
+    ports:
+      - '22'
+    cap_add:
+      - NET_ADMIN
+    networks:
+      SubnetNAT:
+        ipv4_address: 10.0.1.2
+      PlayerSubnet:
+        ipv4_address: 10.0.0.2
+  Entrance:
+    build: ./Entrance
+    image: entrance
+    hostname: Entrance
+    cap_add:
+      - NET_ADMIN
+    networks:
+      PlayerSubnet:
+        ipv4_address: 10.0.0.5
+  FirstFloor:
+    build: ./FirstFloor
+    image: firstfloor
+    hostname: FirstFloor
+    cap_add:
+      - NET_ADMIN
+    networks:
+      PlayerSubnet:
+        ipv4_address: 10.0.0.7
+  SecondFloor:
+    build: ./SecondFloor
+    image: secondfloor
+    hostname: SecondFloor
+    cap_add:
+      - NET_ADMIN
+    networks:
+      PlayerSubnet:
+        ipv4_address: 10.0.0.10
+  ThirdFloor:
+    build: ./ThirdFloor
+    image: thirdfloor
+    hostname: ThirdFloor
+    cap_add:
+      - NET_ADMIN
+    networks:
+      PlayerSubnet:
+        ipv4_address: 10.0.0.13
+  FourthFloor:
+    build: ./FourthFloor
+    image: fourthfloor
+    hostname: FourthFloor
+    cap_add:
+      - NET_ADMIN
+    networks:
+      PlayerSubnet:
+        ipv4_address: 10.0.0.16
+  FifthFloor:
+    build: ./FifthFloor
+    image: fifthfloor
+    hostname: FifthFloor
+    cap_add:
+      - NET_ADMIN
+    networks:
+      PlayerSubnet:
+        ipv4_address: 10.0.0.17
+networks:
+  SubnetNAT:
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 10.0.1.0/27
+  PlayerSubnet:
+    driver: bridge
+    internal: true
+    ipam:
+      config:
+        - subnet: 10.0.0.0/27
