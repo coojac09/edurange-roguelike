@@ -25,5 +25,3 @@ for studentDIR in "${DIRS[@]}"; do
 	mkdir $studentDIR/Entrance
 done
 
-apt-get install --install-recommends linux-generic-lts-xenial
-reboot
