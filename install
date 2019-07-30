@@ -8,7 +8,8 @@ for FILE in /home/*; do
 		echo $FILE
 	fi
 done
-
+iptables -P INPUT ACCEPT
+iptables -P OUTPUT ACCEPT
 
 for studentDIR in "${DIRS[@]}"; do
 	player=$(basename $studentDIR)
