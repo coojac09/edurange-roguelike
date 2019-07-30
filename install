@@ -11,7 +11,7 @@ for FILE in /home/*; do
 	fi
 done
 
-cp /bin/bash /bin/rbash
+#cp /bin/bash /bin/rbash
 
 for studentDIR in "${DIRS[@]}"; do
 	player=$(basename $studentDIR)
