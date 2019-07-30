@@ -12,8 +12,6 @@ done
 for studentDIR in "${DIRS[@]}"; do
 	player=$(basename $studentDIR)
 	cp /tmp/edurange-roguelike/motd/motd/message.txt /$studentDIR/
-
-	usermod -s /bin/rbash $player
 	mkdir $studentDIR/Entrance
 done
 
