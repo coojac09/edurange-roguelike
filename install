@@ -13,7 +13,7 @@ for studentDIR in "${DIRS[@]}"; do
 	player=$(basename $studentDIR)
 	cp /tmp/edurange-roguelike/motd/motd/message.txt /$studentDIR/
 	
-	chsh -s /bin/rbash $player
+	mkdir $studentDIR/Entrance
 	mkdir $studentDIR/bin
 	chmod 755 $studentDIR/bin
 	echo "PATH=$HOME/bin" >> $studentDIR/.bashrc"
@@ -28,6 +28,6 @@ for studentDIR in "${DIRS[@]}"; do
 	
 	chattr +i $studentDIR/.bashrc
 	
-	mkdir $studentDIR/Entrance
+	chsh -s /bin/rbash $player
 done
 
