@@ -1,3 +1,4 @@
+#!/bin/bash
 DIRS=()
 
 cat /tmp/edurange-roguelike/motd/message.txt >> /etc/motd
