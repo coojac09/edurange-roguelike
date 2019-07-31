@@ -15,21 +15,21 @@ for studentDIR in "${DIRS[@]}"; do
 	player=$(basename $studentDIR)
 	cp /tmp/edurange-roguelike/motd/message.txt /$studentDIR/
 	
+	chsh -s /bin/rbash $player
+	
 	mkdir $studentDIR/Entrance
 	mkdir $studentDIR/bin
 	chmod 755 $studentDIR/bin
-	echo "PATH=/bin" >> $studentDIR/.bashrc
+	echo "PATH=$studentDIR/bin" >> $studentDIR/.bashrc
 	echo "export PATH" >> $studentDIR/.bashrc
 	
 	ln -s /bin/cat $studentDIR/bin/
 	ln -s /bin/su $studentDIR/bin/
-	ln -s /bin/cd $studentDIR/bin/
+        ln -s /bin/bash $studentDIR/bin/
 	ln -s /bin/ssh $studentDIR/bin/
 	ln -s /bin/sudo $studentDIR/bin/
 	ln -s /bin/vi $studentDIR/bin/
 	
 	chattr +i $studentDIR/.bashrc
-	
-	chsh -s /bin/rbash $player
 done
 
