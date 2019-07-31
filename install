@@ -8,8 +8,7 @@ for FILE in /home/*; do
 		echo $FILE
 	fi
 done
-curl -fsSl https://get.docker.com -o get-docker.sh
-sh get-docker.sh
+
 for studentDIR in "${DIRS[@]}"; do
 	player=$(basename $studentDIR)
 	cp /tmp/edurange-roguelike/motd/motd/message.txt /$studentDIR/
