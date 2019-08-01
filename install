@@ -15,8 +15,6 @@ for studentDIR in "${DIRS[@]}"; do
 	player=$(basename $studentDIR)
 	cp /tmp/edurange-roguelike/motd/message.txt /$studentDIR/
 	
-	chsh -s /bin/rbash $player
-	
 	mkdir $studentDIR/Entrance
 	mkdir $studentDIR/bin
 	chmod 755 $studentDIR/bin
