@@ -23,7 +23,11 @@ for studentDIR in "${DIRS[@]}"; do
 	
 	ln -s /bin/cat $studentDIR/bin/
 	ln -s /bin/su $studentDIR/bin/
-       ln -s /bin/bash $studentDIR/bin/
+        ln -s /bin/bash $studentDIR/bin/
+	ln -s /bin/ls $studentDIR/bin/
+	ln -s /bin/date $studentDIR/bin/
+	ln -s /usr/bin/whoami $studentDIR/bin/
+	ln -s /usr/bin/cut $studentDIR/bin/
 	ln -s /bin/ssh $studentDIR/bin/
 	ln -s /bin/sudo $studentDIR/bin/
 	ln -s /bin/vi $studentDIR/bin/
