@@ -17,7 +17,7 @@ for studentDIR in "${DIRS[@]}"; do
 	
 	mkdir $studentDIR/Entrance
 
-	if [ "$student" = "instructor" ]; then
+	if [ "$player" = "instructor" ]; then
 		continue
 	fi
 	mkdir $studentDIR/bin
