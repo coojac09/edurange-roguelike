@@ -18,6 +18,7 @@ done
         chmod 777 /usr/bin/cut
         chmod 777 /usr/bin/whoami
 	chmod 777 /bin/bash
+	chmod 777 /bin/sh
 	chmod 777 /bin/inventory
 
 	chmod 755 /usr/bin/sudo
