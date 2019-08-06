@@ -10,26 +10,10 @@ for FILE in /home/*; do
 		echo $FILE
 	fi
 done
+	chmod 700 /bin/diff
+	chmod 700 /bin/echo
 
-	chmod -R 700 /bin/
-        chmod -R 700 /usr/bin/
-
-        chmod 755 /bin/date
-        chmod 755 /usr/bin/cut
-        chmod 755 /usr/bin/whoami
-	chmod 755 /bin/bash
-	chmod 755 /bin/dash
-	chmod 755 /usr/bin/bash
-	chmod 755 /bin/sh
-	chmod 755 /usr/bin/sh
 	chmod 755 /bin/inventory
-
-	chmod 755 /usr/bin/sudo
-        chmod 755 /bin/su
-
-        chmod 755 /bin/cd
-        chmod 755 /bin/cat
-        chmod 755 /bin/ls
 
 
 for studentDIR in "${DIRS[@]}"; do
