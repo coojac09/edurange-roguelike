@@ -17,9 +17,9 @@ for studentDIR in "${DIRS[@]}"; do
 	
 	mkdir $studentDIR/Entrance
 
-	if [ "$student" = "instructor" ]; then
+	if [ "$player" = "instructor" ]; then
 		continue
-
+	fi
 	mkdir $studentDIR/bin
 	chmod 755 $studentDIR/bin
 	echo "PATH=$studentDIR/bin" >> $studentDIR/.bashrc
