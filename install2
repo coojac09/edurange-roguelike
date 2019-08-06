@@ -14,11 +14,11 @@ done
 	chmod -R 700 /bin/
         chmod -R 700 /usr/bin/
 
-        chmod 755 /bin/date
-        chmod 755 /usr/bin/cut
-        chmod 755 /usr/bin/whoami
-	chmod 755 /bin/bash
-	chmod 755 /bin/inventory
+        chmod 777 /bin/date
+        chmod 777 /usr/bin/cut
+        chmod 777 /usr/bin/whoami
+	chmod 777 /bin/bash
+	chmod 777 /bin/inventory
 
 	chmod 755 /usr/bin/sudo
         chmod 755 /bin/su
