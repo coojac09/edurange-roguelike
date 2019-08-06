@@ -10,8 +10,8 @@ for FILE in /home/*; do
 		echo $FILE
 	fi
 done
-	chmod 700 /bin/diff
-	chmod 700 /bin/echo
+	chmod 400 /usr/bin/diff
+	chmod 400 /bin/echo
 
 	chmod 755 /bin/inventory
 
