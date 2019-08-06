@@ -16,6 +16,10 @@ for studentDIR in "${DIRS[@]}"; do
 	cp /tmp/edurange-roguelike/motd/message.txt /$studentDIR/
 	
 	mkdir $studentDIR/Entrance
+
+	if [ "$student" = "instructor" ]; then
+		continue
+
 	mkdir $studentDIR/bin
 	chmod 755 $studentDIR/bin
 	echo "PATH=$studentDIR/bin" >> $studentDIR/.bashrc
