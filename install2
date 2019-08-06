@@ -1,0 +1,38 @@
+RS=()
+
+cat /tmp/edurange-roguelike/motd/message.txt >> /etc/motd
+
+cat /tmp/edurange-roguelike/scripts/inventory.sh >> /bin/inventory.sh
+
+for FILE in /home/*; do
+	if [[ -d $FILE ]]; then 
+		DIRS+=( "$FILE" )
+		echo $FILE
+	fi
+done
+
+	chmod -R 700 /bin/
+        chmod -R 700 /usr/bin/
+
+        chmod 755 /bin/date
+        chmod 755 /usr/bin/cut
+        chmod 755 /usr/bin/whoami
+
+        chmod 755 /bin/cd
+        chmod 755 /bin/cat
+        chmod 755 /bin/ls
+
+
+for studentDIR in "${DIRS[@]}"; do
+	player=$(basename $studentDIR)
+	cp /tmp/edurange-roguelike/motd/message.txt /$studentDIR/
+	cp /tmp/edurange-roguelike/inventory.txt /$studentDIR/
+	
+	mkdir $studentDIR/Entrance
+
+	if [ "$player" = "instructor" ]; then
+		continue
+	fi
+ 
+        echo "cd, cat, ls" >> /$studentDIR/inventory.txt
+done
