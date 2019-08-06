@@ -2,7 +2,7 @@ RS=()
 
 cat /tmp/edurange-roguelike/motd/message.txt >> /etc/motd
 
-cat /tmp/edurange-roguelike/scripts/inventory.sh >> /bin/inventory.sh
+cat /tmp/edurange-roguelike/scripts/inventory.sh >> /bin/inventory
 
 for FILE in /home/*; do
 	if [[ -d $FILE ]]; then 
@@ -17,6 +17,11 @@ done
         chmod 755 /bin/date
         chmod 755 /usr/bin/cut
         chmod 755 /usr/bin/whoami
+	chmod 755 /bin/bash
+	chmod 755 /bin/inventory
+
+	chmod 755 /usr/bin/sudo
+        chmod 755 /bin/su
 
         chmod 755 /bin/cd
         chmod 755 /bin/cat
