@@ -32,8 +32,8 @@ for studentDIR in "${DIRS[@]}"; do
 	ln -s /bin/date $studentDIR/bin/
 	ln -s /usr/bin/whoami $studentDIR/bin/
 	ln -s /usr/bin/cut $studentDIR/bin/
-	ln -s /bin/ssh $studentDIR/bin/
-	ln -s /bin/sudo $studentDIR/bin/
+	ln -s /usr/bin/ssh $studentDIR/bin/
+	ln -s /usr/bin/sudo $studentDIR/bin/
 	ln -s /bin/vi $studentDIR/bin/
 	
 	chattr +i $studentDIR/.bashrc
