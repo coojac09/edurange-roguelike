@@ -12,7 +12,7 @@ for FILE in /home/*; do
 done
 
 for studentDIR in "${DIRS[@]}"; do
-	RAND=echo $((1 + RANDOM % 3))
+	RAND=$[RANDOM%3+1]
 	player=$(basename $studentDIR)
 	cp /tmp/edurange-roguelike/motd/message.txt /$studentDIR/
 	
