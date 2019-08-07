@@ -12,10 +12,30 @@ for FILE in /home/*; do
 done
 
 for studentDIR in "${DIRS[@]}"; do
+	RAND=echo $((1 + RANDOM % 3))
 	player=$(basename $studentDIR)
 	cp /tmp/edurange-roguelike/motd/message.txt /$studentDIR/
 	
 	mkdir $studentDIR/Entrance
+
+	case $RAND in
+		1) 
+			touch $studentDIR/Entrance/scroll.txt
+			echo "The secret word is: \"Alhambra\" \n Type \"./stairs\" to continue" > $studentDIR/Entrance/scroll.txt
+			;;
+		2)
+			touch $studentDIR/Entrance/.scroll
+			echo "The secret word is: \"Alhambra\" \n Type \"./stairs\" to continue" > $studentDIR/Entrance/.scroll
+			;;
+		3)
+			touch $studentDIR/Entrance/s\ c\ r\ o\ l\ l.txt
+			echo "The secret word is: \"Alhambra\" \n Type \"./stairs\" to continue" > $studentDIR/Entrance/s\ c\ r\ o\ l\ l.txt
+			;;
+		*)
+			touch $studentDIR/Entrance/ohno.txt
+			;;
+	esac
+
 
 	if [ "$player" = "instructor" ]; then
 		continue
