@@ -1,5 +1,5 @@
 #!/bin/bash
 
 inventory(){
-	cat $HOME/inventory.txt
+	cat $HOME/inventory.txt > 1
 }
