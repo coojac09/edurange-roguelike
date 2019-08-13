@@ -1,0 +1,39 @@
+script "nat_motd" do
+  interpreter "bash"
+  user "root"
+  cwd "/tmp"
+  code <<-EOH
+message=$(cat << "EOF"
+
+.______        ______     _______  __    __   _______  __       __   __  ___  ______ 
+|   _  \      /  __  \   /  _____||  |  |  | |   ____||  |     |  | |  |/  / |   ____| 
+|  |_)  |    |  |  |  | |  |  __  |  |  |  | |  |__   |  |     |  | |  '  /  |  |__
+|      /     |  |  |  | |  | |_ | |  |  |  | |   __|  |  |     |  | |    <   |   __|  
+|  |\  \----.|  `--'  | |  |__| | |  `--'  | |  |____ |  `----.|  | |  .  \  |  |____ 
+| _| `._____| \______/   \______|  \______/  |_______||_______||__| |__|\__\ |_______|
+
+ _         _    _        
+| |   ___ | |_ | |_  _ _   
+| |_ / . \| . \| . \| | |
+|___|\___/|___/|___/`_. |
+                    <___'
+*************************************************************************************************************
+Welcome to the EDURange Rogue-like game scenario!
+
+If at any time you would like to start over, you may return to this Lobby and run "./refresh_floors.sh"
+
+To begin, type: ssh 10.0.0.7
+
+*************************************************************************************************************
+
+EOF
+)
+
+while read player; do
+  player=$(echo -n $player)
+  cd /home/$player
+  echo "$message" > message
+  chmod 404 message
+  echo "cat message" >> .bashrc
+done   EOH
+end
