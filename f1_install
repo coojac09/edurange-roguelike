@@ -14,7 +14,7 @@ done
 for studentDIR in "${DIRS[@]}"; do
 	RAND=$[RANDOM%3+1]
 	player=$(basename $studentDIR)
-	cp /tmp/edurange-roguelike/motd/message.txt /$studentDIR/
+	cp /tmp/edurange-roguelike/motd/f1_message.txt /$studentDIR/
 	
 	mkdir $studentDIR/Entrance
 
