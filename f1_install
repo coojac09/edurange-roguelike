@@ -36,9 +36,6 @@ for studentDIR in "${DIRS[@]}"; do
 			;;
 	esac
 
-	
-	echo "cat f1_message.txt" >> $studentDIR/.bashrc
-
 	if [ "$player" = "instructor" ]; then
 		continue
 	fi
