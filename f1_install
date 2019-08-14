@@ -21,15 +21,15 @@ for studentDIR in "${DIRS[@]}"; do
 	case $RAND in
 		1) 
 			touch $studentDIR/Door/sc\"r\"oll.txt
-			printf "The secret word is: \"Alhambra\" \n Type \"ssh 10.0.0.9\" to continue\n" > $studentDIR/Entrance/sc\"r\"oll.txt
+			printf "The secret word is: \"Alhambra\" \n Type \"ssh 10.0.0.9\" to continue\n" > $studentDIR/Door/sc\"r\"oll.txt
 			;;
 		2)
 			touch $studentDIR/Door/.scroll
-			printf "The secret word is: \"Alhambra\" \n Type \"ssh 10.0.0.9\" to cootinue\n" > $studentDIR/Entrance/.scroll
+			printf "The secret word is: \"Alhambra\" \n Type \"ssh 10.0.0.9\" to cootinue\n" > $studentDIR/Door/.scroll
 			;;
 		3)
 			touch $studentDIR/Door/s\ c\ r\ o\ l\ l.txt
-			printf "The secret word is: \"Alhambra\" \n Type \"ssh 10.0.0.9\" to continue\n" > $studentDIR/Entrance/s\ c\ r\ o\ l\ l.txt
+			printf "The secret word is: \"Alhambra\" \n Type \"ssh 10.0.0.9\" to continue\n" > $studentDIR/Door/s\ c\ r\ o\ l\ l.txt
 			;;
 		*)
 			touch $studentDIR/Door/ohno.txt
