@@ -20,22 +20,24 @@ for studentDIR in "${DIRS[@]}"; do
 
 	case $RAND in
 		1) 
-			touch $studentDIR/Entrance/scroll.txt
-			printf "The secret word is: \"Alhambra\" \n Type \"./stairs\" to continue" > $studentDIR/Entrance/scroll.txt
+			touch $studentDIR/Entrance/sc\"r\"oll.txt
+			printf "The secret word is: \"Alhambra\" \n Type \"ssh 10.0.0.9\" to continue\n" > $studentDIR/Entrance/sc\"r\"oll.txt
 			;;
 		2)
 			touch $studentDIR/Entrance/.scroll
-			printf "The secret word is: \"Alhambra\" \n Type \"./stairs\" to continue" > $studentDIR/Entrance/.scroll
+			printf "The secret word is: \"Alhambra\" \n Type \"ssh 10.0.0.9\" to cootinue\n" > $studentDIR/Entrance/.scroll
 			;;
 		3)
 			touch $studentDIR/Entrance/s\ c\ r\ o\ l\ l.txt
-			printf "The secret word is: \"Alhambra\" \n Type \"./stairs\" to continue" > $studentDIR/Entrance/s\ c\ r\ o\ l\ l.txt
+			printf "The secret word is: \"Alhambra\" \n Type \"ssh 10.0.0.9\" to continue\n" > $studentDIR/Entrance/s\ c\ r\ o\ l\ l.txt
 			;;
 		*)
 			touch $studentDIR/Entrance/ohno.txt
 			;;
 	esac
 
+	
+	echo "cat f1_message.txt" >> $studentDIR/.bashrc
 
 	if [ "$player" = "instructor" ]; then
 		continue
