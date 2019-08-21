@@ -1,1 +1,14 @@
-roll 1 execs
+You have arrived at the entrance to the executioner's labyrinth. 
+
+Magically, you have been granted access to the 'find' command. 
+
+The password that will get you to the next level is hidden in one of the subdirectories of the maze.
+
+Find and read the "scroll.txt" which is not executable. 
+
+Be sure to check the manual page for the "find" command with 'man find'.
+Keep in mind that find supports logical operators like && (AND), || (OR), and ! (not)
+
+Available commands: cd, ls, cat, find, man
+
+**********************************************************************************************************
