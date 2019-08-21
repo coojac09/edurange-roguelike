@@ -1,1 +1,13 @@
-roll 2 group
+You have arrived at the door to the Maze of the Finders' Cult.
+
+The Finders were an ancient secret society of super sleuths, who went into hiding thousands of years ago.
+
+Although they're long gone, you sense their ancient magic bestowing the gift of 'find' upon you. You now have access to the 'find' command.
+
+The scroll you seek is the only one which is belong to the group 'finders'
+
+Be sure to read the manual page for "find" with 'man find', to learn how to use find to filter groups. 
+
+Available Commands: cd, ls, cat, find, man
+
+****************************************************************************************************************************************
