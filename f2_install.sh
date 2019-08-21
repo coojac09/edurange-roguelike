@@ -3,6 +3,8 @@ cat /tmp/edurange-roguelike/motd/f2_message.txt > /etc/motd
 
 while read player; do
 	player=$(echo -n $player)
+	studentDIR=/home/$player
+
 	cd /home/$player
 
 	cat /tmp/edurange-roguelike/motd/f2_message.txt > message.txt
@@ -35,4 +37,26 @@ while read player; do
 	echo "the password is $password, and the ip address is 10.0.0.16" > scroll.txt
 	chmod 400 scroll.txt
 	chown $player:$player scroll.txt
+
+	if [ "$player" = "instructor" ]; then
+		continue
+	fi
+	mkdir $studentDIR/bin
+	chmod 755 $studentDIR/bin
+	echo "PATH=$studentDIR/bin" >> $studentDIR/.bashrc
+	echo "export PATH" >> $studentDIR/.bashrc
+
+	ln -s /bin/cat $studentDIR/bin/
+	ln -s /bin/su $studentDIR/bin/
+	ln -s /bin/bash $studentDIR/bin/
+	ln -s /bin/ls $studentDIR/bin/
+	ln -s /bin/date $studentDIR/bin/
+	ln -s /usr/bin/whoami $studentDIR/bin/
+	ln -s /usr/bin/cut $studentDIR/bin/
+	ln -s /usr/bin/ssh $studentDIR/bin/
+	ln -s /usr/bin/sudo $studentDIR/bin/
+	ln -s /usr/bin/vi $studentDIR/bin/
+	ln -s /usr/bin/find $studentDIR/bin/
+
+	chattr +i $studentDIR/.bashrc
 done
