@@ -13,12 +13,11 @@ done
 
 
 for studentDIR in "${DIRS[@]}"; do
+	RAND=$[RANDOM%3+1]
 	player=$(basename $studentDIR)
 	studentDIR=/home/$player
 
 	cd /home/"$player" || exit
-
-	cat /tmp/edurange-roguelike/motd/f2_message.txt > message.txt
 
 	edurange-get-var user "$player" secret_floor_two > flag
 	chown "$player":"$player" flag
@@ -30,24 +29,49 @@ for studentDIR in "${DIRS[@]}"; do
 
 	# do directories
 	for i in {1..100}; do
-		mkdir dir$i
-		cd dir$i || exit
+		mkdir maze/dir$i
+		cd maze/dir$i || exit
 		mySeedNumber=$$$(date +%N); # seed will be the pid + nanoseconds
 		myRandomString=$( echo "$mySeedNumber" | md5sum | md5sum );
 		# create our actual random string
 		myRandomResult="${myRandomString:2:100}"
 		echo "$myRandomResult" > scroll.txt
-		cd ..
-		chown -R "$player":"$player" dir$i
+		cd $studentDIR
+		chmod -R 666 "$player":"$player" maze/dir$i
 	done
-	cd dir"$(shuf -i 1-100 -n 1)" || exit 
-	echo "the password is $password, and the ip address is 10.0.0.16" > scroll.txt
-	chmod 400 scroll.txt
-	chown "$player":"$player" scroll.txt
+
+	case $RAND in
+		1)	
+			for loc in $studentDIR/maze/* do
+				chmod +x maze/$loc/scroll.txt
+			done
+			cat /tmp/edurange-roguelike/motd/f2_inst1.txt > $studentDIR/message.txt
+			cd maze/dir"$(shuf -i 1-100 -n 1)" || exit
+			chmod -x scroll.txt
+			echo "the password is $password and the ip address is 10.0.0.31" > scroll.txt
+			;;
+		2)      
+			cat /tmp/edurange-roguelike/motd/f2_inst2.txt > $studentDIR/message.txt	
+			groupadd -g 1337 finders
+			usermod -G finders $player
+			cd maze/dir"$(shuf -i 1-100 -n 1)" || exit
+			echo "the password is $password and the ip address is 10.0.0.31" > scroll.txt
+			chgrp finders scroll.txt
+			;;
+
+		3)	
+			cat /tmp/edurange-roguelike/motd/f2_inst3.txt > $studentDIR/message.txt
+			cd maze/dir"$(shuf -i 1-100 -n 1)" || exit
+			echo "the password is $password and the ip address is 10.0.0.31" > scroll.txt
+			;;
+		*)
+			touch $studentDIR/ohno.txt
+	esac
 
 	if [ "$player" = "instructor" ]; then
 		continue
 	fi
+
 	mkdir "$studentDIR"/bin
 	chmod 755 "$studentDIR"/bin
 	echo "PATH=$studentDIR/bin" >> "$studentDIR"/.bashrc
