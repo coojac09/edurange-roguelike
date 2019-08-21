@@ -1,1 +1,13 @@
-roll 3 size
+You have arrived at the door to the Maze of Themis, Goddess of the Scales. 
+
+There is only one scroll in the maze which contains the answers you seek to proceed to the next level.
+
+Themis demands you find the scroll whose size is exactly 108 bytes. 
+
+You sense her magic granted you access to a new command 'find'.
+
+Be sure to read the manual page for find "man find" to learn how to filter for a specific file size.
+
+Available commands: cd, ls, cat, find, man
+
+*************************************************************************************************************************************
