@@ -27,6 +27,8 @@ for studentDIR in "${DIRS[@]}"; do
 	echo -e "${password}\n${password}" | passwd "$player"
 	mkdir $studentDIR/maze/
 
+	nextPass=$(edurange-get-var user "$player" floor_three_password)
+
 	# do directories
 	for i in {1..100}; do
 		mkdir maze/dir$i
@@ -58,7 +60,7 @@ for studentDIR in "${DIRS[@]}"; do
 			cd $studentDIR
 			cd maze/dir"$(shuf -i 1-100 -n 1)" || exit
 			chmod -x scroll.txt
-			echo "the password is $password and the ip address is 10.0.0.31" > scroll.txt
+			echo "the password is $nextPass and the ip address is 10.0.0.31" > scroll.txt
 			;;
 		2)      
 			cat /tmp/edurange-roguelike/motd/f2_inst2.txt > $studentDIR/message.txt
@@ -67,7 +69,7 @@ for studentDIR in "${DIRS[@]}"; do
 			usermod -G finders $player
 			cd $studentDIR
 			cd maze/dir"$(shuf -i 1-100 -n 1)" || exit
-			echo "the password is $password and the ip address is 10.0.0.31" > scroll.txt
+			echo "the password is $nextPass and the ip address is 10.0.0.31" > scroll.txt
 			chgrp finders scroll.txt
 			;;
 
@@ -76,7 +78,7 @@ for studentDIR in "${DIRS[@]}"; do
 			echo "cat $studentDIR/message.txt" >> $studentDIR/.bashrc
 			cd $studentDIR
 			cd maze/dir"$(shuf -i 1-100 -n 1)" || exit
-			echo "the password is $password and the ip address is 10.0.0.31, also here's some padding to change the file size." > scroll.txt
+			echo "the password is $nextPass and the ip address is 10.0.0.31, also here's some padding to change the file size." > scroll.txt
 			;;
 		*)
 			touch $studentDIR/ohno.txt
@@ -105,5 +107,6 @@ for studentDIR in "${DIRS[@]}"; do
 	ln -s /usr/bin/find "$studentDIR"/bin/
 
 	chattr +i "$studentDIR"/.bashrc
+	chmod -x "$studentDIR"/bin
 done
 
