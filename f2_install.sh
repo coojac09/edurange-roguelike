@@ -54,13 +54,15 @@ for studentDIR in "${DIRS[@]}"; do
 				chmod +x $loc/scroll.txt
 			done
 			cat /tmp/edurange-roguelike/motd/f2_inst1.txt > $studentDIR/message.txt
+			echo "cat $studentDIR/message.txt" >> $studentDIR/.bashrc
 			cd $studentDIR
 			cd maze/dir"$(shuf -i 1-100 -n 1)" || exit
 			chmod -x scroll.txt
 			echo "the password is $password and the ip address is 10.0.0.31" > scroll.txt
 			;;
 		2)      
-			cat /tmp/edurange-roguelike/motd/f2_inst2.txt > $studentDIR/message.txt	
+			cat /tmp/edurange-roguelike/motd/f2_inst2.txt > $studentDIR/message.txt
+			echo "cat $studentDIR/message.txt" >> $studentDIR/.bashrc	
 			groupadd -g 1337 finders
 			usermod -G finders $player
 			cd $studentDIR
@@ -71,6 +73,7 @@ for studentDIR in "${DIRS[@]}"; do
 
 		3)	
 			cat /tmp/edurange-roguelike/motd/f2_inst3.txt > $studentDIR/message.txt
+			echo "cat $studentDIR/message.txt" >> $studentDIR/.bashrc
 			cd $studentDIR
 			cd maze/dir"$(shuf -i 1-100 -n 1)" || exit
 			echo "the password is $password and the ip address is 10.0.0.31, also here's some padding to change the file size." > scroll.txt
