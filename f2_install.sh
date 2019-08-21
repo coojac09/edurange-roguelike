@@ -1,8 +1,19 @@
 #!/bin/bash
+
+DIRS=()
+rm -rf /etc/motd
 cat /tmp/edurange-roguelike/motd/f2_message.txt > /etc/motd
 
-while read -r player; do
-	player=$(echo -n "$player")
+for FILE in /home/*; do
+	if [[ -d $FILE ]]; then
+		DIRS+=( "$FILE" )
+		echo $FILE
+	fi
+done
+
+
+for studentDIR in "${DIRS[@]}"; do
+	player=$(basename $studentDIR)
 	studentDIR=/home/$player
 
 	cd /home/"$player" || exit
