@@ -37,7 +37,7 @@ for studentDIR in "${DIRS[@]}"; do
 		myRandomResult="${myRandomString:2:100}"
 		echo "$myRandomResult" > scroll.txt
 		cd $studentDIR
-		chmod -R 644 maze/dir$i
+		chmod -R 666 maze/dir$i
 	done
 
 	case $RAND in
