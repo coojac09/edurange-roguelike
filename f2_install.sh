@@ -1,3 +1,4 @@
+#!/bin/bash
 cat /tmp/edurange-roguelike/motd/f2_message.txt > /etc/motd
 
 while read player; do
@@ -34,3 +35,4 @@ while read player; do
 	echo "the password is $password, and the ip address is 10.0.0.16" > scroll.txt
 	chmod 400 scroll.txt
 	chown $player:$player scroll.txt
+done
