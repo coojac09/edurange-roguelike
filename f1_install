@@ -14,6 +14,7 @@ done
 for studentDIR in "${DIRS[@]}"; do
 	RAND=$[RANDOM%3+1]
 	player=$(basename $studentDIR)
+	password=$(edurange-get-var "$player" floor_two_password
 	cp /tmp/edurange-roguelike/motd/f1_message.txt /$studentDIR/
 	
 	mkdir $studentDIR/Door
@@ -21,15 +22,15 @@ for studentDIR in "${DIRS[@]}"; do
 	case $RAND in
 		1) 
 			touch $studentDIR/Door/sc\"r\"oll.txt
-			printf "The secret word is: \"Alhambra\" \n Type \"ssh 10.0.0.9\" to continue\n" > $studentDIR/Door/sc\"r\"oll.txt
+			printf "The IP address for the next floor is 10.0.0.22, the password is ${password}" > $studentDIR/Door/sc\"r\"oll.txt
 			;;
 		2)
 			touch $studentDIR/Door/.scroll
-			printf "The secret word is: \"Alhambra\" \n Type \"ssh 10.0.0.9\" to cootinue\n" > $studentDIR/Door/.scroll
+			printf "The IP address for the next floor is 10.0.0.22, the password is ${password}" > $studentDIR/Door/.scroll
 			;;
 		3)
 			touch $studentDIR/Door/s\ c\ r\ o\ l\ l.txt
-			printf "The secret word is: \"Alhambra\" \n Type \"ssh 10.0.0.9\" to continue\n" > $studentDIR/Door/s\ c\ r\ o\ l\ l.txt
+			printf "The IP address for the next floor is 10.0.0.22, the password is ${password}" > $studentDIR/Door/s\ c\ r\ o\ l\ l.txt
 			;;
 		*)
 			touch $studentDIR/Door/ohno.txt
