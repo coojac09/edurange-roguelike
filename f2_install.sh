@@ -37,15 +37,16 @@ for studentDIR in "${DIRS[@]}"; do
 		myRandomResult="${myRandomString:2:100}"
 		echo "$myRandomResult" > scroll.txt
 		cd $studentDIR
-		chmod -R 666 "$player":"$player" maze/dir$i
+		chmod -R 644 maze/dir$i
 	done
 
 	case $RAND in
 		1)	
-			for loc in $studentDIR/maze/* do
-				chmod +x maze/$loc/scroll.txt
+			for loc in $studentDIR/maze/*; do
+				chmod +x $loc/scroll.txt
 			done
 			cat /tmp/edurange-roguelike/motd/f2_inst1.txt > $studentDIR/message.txt
+			cd $studentDIR
 			cd maze/dir"$(shuf -i 1-100 -n 1)" || exit
 			chmod -x scroll.txt
 			echo "the password is $password and the ip address is 10.0.0.31" > scroll.txt
@@ -54,6 +55,7 @@ for studentDIR in "${DIRS[@]}"; do
 			cat /tmp/edurange-roguelike/motd/f2_inst2.txt > $studentDIR/message.txt	
 			groupadd -g 1337 finders
 			usermod -G finders $player
+			cd $studentDIR
 			cd maze/dir"$(shuf -i 1-100 -n 1)" || exit
 			echo "the password is $password and the ip address is 10.0.0.31" > scroll.txt
 			chgrp finders scroll.txt
@@ -61,11 +63,13 @@ for studentDIR in "${DIRS[@]}"; do
 
 		3)	
 			cat /tmp/edurange-roguelike/motd/f2_inst3.txt > $studentDIR/message.txt
+			cd $studentDIR
 			cd maze/dir"$(shuf -i 1-100 -n 1)" || exit
-			echo "the password is $password and the ip address is 10.0.0.31" > scroll.txt
+			echo "the password is $password and the ip address is 10.0.0.31, also here's some padding to change the file size." > scroll.txt
 			;;
 		*)
 			touch $studentDIR/ohno.txt
+			;;
 	esac
 
 	if [ "$player" = "instructor" ]; then
