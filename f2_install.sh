@@ -15,7 +15,6 @@ done
 for studentDIR in "${DIRS[@]}"; do
 	RAND=$[RANDOM%3+1]
 	player=$(basename $studentDIR)
-	studentDIR=/home/$player
 
 	cd /home/"$player" || exit
 
@@ -26,6 +25,7 @@ for studentDIR in "${DIRS[@]}"; do
 	# change password
 	password=$(edurange-get-var user "$player" floor_two_password)
 	echo -e "${password}\n${password}" | passwd "$player"
+	mkdir $studentDIR/maze/
 
 	# do directories
 	for i in {1..100}; do
