@@ -14,7 +14,7 @@ done
 for studentDIR in "${DIRS[@]}"; do
 	RAND=$[RANDOM%3+1]
 	player=$(basename $studentDIR)
-	password=$(edurange-get-var "$player" floor_two_password)
+	password=$(edurange-get-var user "$player" floor_two_password)
 	cp /tmp/edurange-roguelike/motd/f1_message.txt /$studentDIR/
 	
 	edurange-get-var user "$player" secret_floor_one > $studentDIR/flag
