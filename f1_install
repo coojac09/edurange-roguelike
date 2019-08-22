@@ -26,15 +26,15 @@ for studentDIR in "${DIRS[@]}"; do
 	case $RAND in
 		1) 
 			touch $studentDIR/Door/sc\"r\"oll.txt
-			printf "The IP address for the next floor is 10.0.0.22, the password is ${password}" > $studentDIR/Door/sc\"r\"oll.txt
+			echo "The IP address for the next floor is 10.0.0.22, the password is $password" > $studentDIR/Door/sc\"r\"oll.txt
 			;;
 		2)
 			touch $studentDIR/Door/.scroll
-			printf "The IP address for the next floor is 10.0.0.22, the password is ${password}" > $studentDIR/Door/.scroll
+			echo "The IP address for the next floor is 10.0.0.22, the password is $password" > $studentDIR/Door/.scroll
 			;;
 		3)
 			touch $studentDIR/Door/s\ c\ r\ o\ l\ l.txt
-			printf "The IP address for the next floor is 10.0.0.22, the password is ${password}" > $studentDIR/Door/s\ c\ r\ o\ l\ l.txt
+			echo "The IP address for the next floor is 10.0.0.22, the password is $password" > $studentDIR/Door/s\ c\ r\ o\ l\ l.txt
 			;;
 		*)
 			touch $studentDIR/Door/ohno.txt
