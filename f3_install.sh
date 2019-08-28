@@ -46,7 +46,7 @@ EOF
 
 			;;
 
-		2)	cat /tmp/edurange-roguelike/texts/logic.txt > $studentDIR/logic.txt
+		2)	cat /tmp/edurange-roguelike/texts/taffy.txt > $studentDIR/taffy.txt
 			cat /tmp/edurange-roguelike/motd/f3_inst2.txt > $studentDIR/message.txt
 			cat > $studentDIR/scroll.txt <<EOF
 -----------------------------
