@@ -107,5 +107,4 @@ EOF
 	ln -s /bin/unzip "$studentDIR"/bin/
 
 	chattr +i "$studentDIR"/.bashrc
-	chmod -x "$studentDIR"/bin
 done
