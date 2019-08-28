@@ -7,7 +7,7 @@ rm -rf /etc/motd
 cat /tmp/edurange-roguelike/motd/f3_message.txt > /etc/motd
 
 for FILE in /home/*; do
-	if [[ -d FILE ]]; then
+	if [[ -d $FILE ]]; then
 		DIRS+=( "$FILE" )
 		echo $FILE
 	fi
