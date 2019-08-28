@@ -5,7 +5,7 @@ To find the word, use grep to determine the following:
 
 1. Number of lines containing "ff"
 2. Number of lines containing "-"
-3. Number of lines containing "'" (an apostraphe)
+3. The total number of lines in the file
 
 Then, multiply together the numbers you found for parts 1 and 2
 Then, subtract the number you found for part 3

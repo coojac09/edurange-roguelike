@@ -3,8 +3,8 @@ The Password to unlock the lockbox is one of the words in "chaos.txt"
 
 The line number containing the word can be found by:
 
-Find the number of lines which have a semicolon ";"
-Subtract the number of lines which do NOT have a semicolon ";"
+Find the number of lines which do NOT contain a semicolon ";"
+Subtract the number of lines which DO contain a semicolon ";"
 
 The password is the fifth word on this line number.
 

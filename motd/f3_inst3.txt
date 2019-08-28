@@ -1,13 +1,11 @@
 =====================================================================
 The password to unlock the lockbox is one of the words in lighthouse.txt
 
-To find the word, find the following:
+To find the word, use grep to find the following:
 
-1. The number of lines in lighthouse.txt which contain "I"
-2. The number of lines in lighthouse.txt which do not contain "ea"
-
-By subtracting the number you found in part 1 from the number in part 2, you will find the word number of the password.
-(# Lines NOT "ea") - (# Lines "I") = Password
+First, find the number of lines in lighthouse.txt which do NOT contain "ea"
+Then, subtract the number of lines which DO contain "I"
+This is the word number of the password. 
 
 Once you have found the password, type "unzip lockbox.zip" and you will be prompted to enter it.
 If you are correct, you will be rewarded with the scroll containing the information to get to the next level.
