@@ -7,7 +7,7 @@ rm -rf /etc/motd
 cat /tmp/edurange-roguelike/motd/f3_message.txt > /etc/motd
 
 for FILE in /home/*; do
-	if [[ -d FILE ]]; then
+	if [[ -d $FILE ]]; then
 		DIRS+=( "$FILE" )
 		echo $FILE
 	fi
@@ -24,7 +24,7 @@ for studentDIR in "${DIRS[@]}"; do
 	chmod 400 flag
 
 	password=$(edurange-get-var user "$player" floor_three_password)
-	echo -e "${password}"\n"${password}" | passwd "$player"
+	echo -e "${password}\n${password}" | passwd "$player"
 
 	nextPass=$(edurange-get-var user "$player" floor_four_password)
 
@@ -64,7 +64,7 @@ EOF
 
 		3)
 			cat /tmp/edurange-roguelike/texts/lighthouse.txt > $studentDIR/lighthouse.txt
-			cat /tmp/edurange_roguelike/motd/f3_inst3.txt > $studentDIR/message.txt
+			cat /tmp/edurange-roguelike/motd/f3_inst3.txt > $studentDIR/message.txt
 			cat > $studentDIR/scroll.txt <<EOF
 ----------------------------
 Well done! You've solved the challenge!
