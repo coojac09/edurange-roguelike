@@ -102,9 +102,9 @@ EOF
 	ln -s /usr/bin/ssh "$studentDIR"/bin/
 	ln -s /usr/bin/sudo "$studentDIR"/bin/
 	ln -s /usr/bin/vi "$studentDIR"/bin/
-	
+	ln -s /usr/bin/man "$studentDIR"/bin/
 	ln -s /bin/grep "$studentDIR"/bin/
-	ln -s /bin/unzip "$studentDIR"/bin/
+	ln -s /usr/bin/unzip "$studentDIR"/bin/
 
 	chattr +i "$studentDIR"/.bashrc
 done

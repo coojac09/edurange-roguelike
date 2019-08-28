@@ -105,6 +105,7 @@ for studentDIR in "${DIRS[@]}"; do
 	ln -s /usr/bin/sudo "$studentDIR"/bin/
 	ln -s /usr/bin/vi "$studentDIR"/bin/
 	ln -s /usr/bin/find "$studentDIR"/bin/
+	ln -s /usr/bin/man "$studentDIR"/bin/
 
 	chattr +i "$studentDIR"/.bashrc
 done
