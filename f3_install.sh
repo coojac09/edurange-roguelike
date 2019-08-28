@@ -103,7 +103,6 @@ EOF
 	ln -s /usr/bin/sudo "$studentDIR"/bin/
 	ln -s /usr/bin/vi "$studentDIR"/bin/
 	ln -s /usr/bin/man "$studentDIR"/bin/
-	ln -s /usr/bin/pager "$studentDIR"/bin/
 	ln -s /bin/grep "$studentDIR"/bin/
 	ln -s /usr/bin/unzip "$studentDIR"/bin/
 	
