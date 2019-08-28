@@ -24,7 +24,7 @@ for studentDIR in "${DIRS[@]}"; do
 	chmod 400 flag
 
 	password=$(edurange-get-var user "$player" floor_three_password)
-	echo -e "${password}\n${password}" | passwd "$player"
+	echo -e "${password}"\n"${password}" | passwd "$player"
 
 	nextPass=$(edurange-get-var user "$player" floor_four_password)
 
