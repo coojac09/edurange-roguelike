@@ -1,0 +1,16 @@
+=============================================================================================
+The Password to unlock the lockbox is one of the words in "chaos.txt"
+
+The line number containing the word can be found by:
+
+Find the number of lines which have a semicolon ";"
+Subtract the number of lines which do NOT have a semicolon ";"
+
+The password is the fifth word on this line number.
+
+Once you've found the password, type "unzip lockbox.zip" and you will be prompted to enter it.
+If you are correct, you will be rewarded with the scroll.
+
+Hint: Find the options for grep to count lines, and invert matching. 
+Necessary Commands: ls, cat, grep, unzip, man
+==============================================================================================

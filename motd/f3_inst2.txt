@@ -1,0 +1,21 @@
+==============================================================
+The password to unlock the lockbox is one of the words in taffy.txt
+
+To find the word, use grep to determine the following:
+
+1. Number of lines containing "ff"
+2. Number of lines containing "-"
+3. Number of lines containing "'" (an apostraphe)
+
+Then, multiply together the numbers you found for parts 1 and 2
+Then, subtract the number you found for part 3
+
+This resulting number is the word number of the password
+(Hyphenated words are counted as one, punctuation is otherwise ignored)
+
+Once you have found the word, type "unzip lockbox.zip" and you will be prompted to enter it. 
+If you found the correct word, you will be rewarded with the scroll containing the information for the next level. 
+
+Hint: Find the option for grep which counts lines, keep in mind some characters need to be escaped "\" when searching for them.
+Necessary Commands: ls, cat, grep, unzip, man
+==============================================================
