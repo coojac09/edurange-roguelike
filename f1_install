@@ -16,7 +16,7 @@ for studentDIR in "${DIRS[@]}"; do
 	player=$(basename $studentDIR)
 	password=$(edurange-get-var user "$player" floor_two_password)
 	cp /tmp/edurange-roguelike/motd/f1_message.txt /$studentDIR/
-	
+
 	edurange-get-var user "$player" secret_floor_one > $studentDIR/flag
 	chown "$player":"$player" $studentDIR/flag
 	chmod 400 $studentDIR/flag
@@ -48,10 +48,10 @@ for studentDIR in "${DIRS[@]}"; do
 	chmod 755 $studentDIR/bin
 	echo "PATH=$studentDIR/bin" >> $studentDIR/.bashrc
 	echo "export PATH" >> $studentDIR/.bashrc
-	
+
 	ln -s /bin/cat $studentDIR/bin/
 	ln -s /bin/su $studentDIR/bin/
-        ln -s /bin/bash $studentDIR/bin/
+	ln -s /bin/bash $studentDIR/bin/
 	ln -s /bin/ls $studentDIR/bin/
 	ln -s /bin/date $studentDIR/bin/
 	ln -s /usr/bin/whoami $studentDIR/bin/
@@ -60,6 +60,13 @@ for studentDIR in "${DIRS[@]}"; do
 	ln -s /usr/bin/sudo $studentDIR/bin/
 	ln -s /usr/bin/vi $studentDIR/bin/
 	ln -s /usr/bin/man $studentDIR/bin/
+
+	ln -s /usr/bin/tbl "$studentDIR"/bin/
+	ln -s /usr/bin/preconv "$studentDIR"/bin/
+	ln -s /usr/bin/nroff "$studentDIR"/bin/
+	ln -s /usr/bin/less "$studentDIR"/bin/
+	ln -s /usr/bin/tr "$studentDIR"/bin/
+	ln -s /usr/bin/pager "$studentDIR"/bin/
 
 	chattr +i $studentDIR/.bashrc
 done

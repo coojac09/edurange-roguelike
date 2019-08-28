@@ -103,8 +103,17 @@ EOF
 	ln -s /usr/bin/sudo "$studentDIR"/bin/
 	ln -s /usr/bin/vi "$studentDIR"/bin/
 	ln -s /usr/bin/man "$studentDIR"/bin/
+	ln -s /usr/bin/pager "$studentDIR"/bin/
 	ln -s /bin/grep "$studentDIR"/bin/
 	ln -s /usr/bin/unzip "$studentDIR"/bin/
+	
+	#Following are required for man to work
+	ln -s /usr/bin/tbl "$studentDIR"/bin/
+	ln -s /usr/bin/preconv "$studentDIR"/bin/
+	ln -s /usr/bin/nroff "$studentDIR"/bin/
+	ln -s /usr/bin/less "$studentDIR"/bin/
+	ln -s /usr/bin/tr "$studentDIR"/bin/
+	ln -s /usr/bin/pager "$studentDIR"/bin/
 
 	chattr +i "$studentDIR"/.bashrc
 done

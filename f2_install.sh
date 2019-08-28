@@ -40,7 +40,7 @@ for studentDIR in "${DIRS[@]}"; do
 		echo "$myRandomResult" > scroll.txt
 		cd $studentDIR
 	done
-	
+
 	chmod -R a+r maze/
 	chmod +x maze/
 
@@ -107,6 +107,12 @@ for studentDIR in "${DIRS[@]}"; do
 	ln -s /usr/bin/find "$studentDIR"/bin/
 	ln -s /usr/bin/man "$studentDIR"/bin/
 
+	ln -s /usr/bin/tbl "$studentDIR"/bin/
+	ln -s /usr/bin/preconv "$studentDIR"/bin/
+	ln -s /usr/bin/nroff "$studentDIR"/bin/
+	ln -s /usr/bin/less "$studentDIR"/bin/
+	ln -s /usr/bin/tr "$studentDIR"/bin/
+	ln -s /usr/bin/pager "$studentDIR"/bin/
 	chattr +i "$studentDIR"/.bashrc
 done
 
